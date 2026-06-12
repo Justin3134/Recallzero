@@ -1,0 +1,53 @@
+diff --git a/node_modules/@openuidev/react-ui/dist/components/SectionBlock/FoldableSection.js b/node_modules/@openuidev/react-ui/dist/components/SectionBlock/FoldableSection.js
+index f2ffd27..f8cd87c 100644
+--- a/node_modules/@openuidev/react-ui/dist/components/SectionBlock/FoldableSection.js
++++ b/node_modules/@openuidev/react-ui/dist/components/SectionBlock/FoldableSection.js
+@@ -9,7 +9,7 @@ export const FoldableSectionRoot = forwardRef(({ className, style, ...props }, r
+ FoldableSectionRoot.displayName = "FoldableSectionRoot";
+ export const FoldableSectionItem = forwardRef(({ className, style, value, ...props }, ref) => (_jsx(AccordionPrimitive.Item, { ref: ref, className: clsx("openui-foldable-section-item", className), style: style, value: value, ...props })));
+ FoldableSectionItem.displayName = "FoldableSectionItem";
+-export const FoldableSectionTrigger = forwardRef(({ className, style, text, ...props }, ref) => (_jsx(AccordionPrimitive.Header, { className: "openui-foldable-section-header", children: _jsx(AccordionPrimitive.Trigger, { ref: ref, className: clsx("openui-foldable-section-trigger", className), style: style, ...props, children: _jsxs("div", { className: "openui-foldable-section-trigger-content-wrapper", children: [_jsx(Separator, { className: "openui-foldable-section-trigger-content-separator" }), _jsxs("div", { className: "openui-foldable-section-trigger-content-icon-button-wrapper", children: [_jsx(IconButton, { icon: _jsx(ChevronRight, { className: "openui-foldable-section-trigger-content-icon-button-icon" }), size: "3-extra-small", variant: "secondary", className: "openui-foldable-section-trigger-content-icon-button" }), _jsx("div", { className: "openui-foldable-section-trigger-content-text", children: text })] })] }) }) })));
++export const FoldableSectionTrigger = forwardRef(({ className, style, text, ...props }, ref) => (_jsx(AccordionPrimitive.Header, { className: "openui-foldable-section-header", children: _jsx(AccordionPrimitive.Trigger, { ref: ref, className: clsx("openui-foldable-section-trigger", className), style: style, ...props, children: _jsxs("div", { className: "openui-foldable-section-trigger-content-wrapper", children: [_jsx(Separator, { className: "openui-foldable-section-trigger-content-separator" }), _jsxs("div", { className: "openui-foldable-section-trigger-content-icon-button-wrapper", children: [_jsx("div", { className: "openui-icon-button openui-icon-button-secondary openui-icon-button-3-extra-small openui-icon-button-square openui-foldable-section-trigger-content-icon-button", "aria-hidden": true, children: _jsx("span", { className: "openui-icon-button-icon", children: _jsx(ChevronRight, { className: "openui-foldable-section-trigger-content-icon-button-icon" }) }) }), _jsx("div", { className: "openui-foldable-section-trigger-content-text", children: text })] })] }) }) })));
+ FoldableSectionTrigger.displayName = "FoldableSectionTrigger";
+ export const FoldableSectionContent = forwardRef(({ className, style, children, ...props }, ref) => (_jsx(AccordionPrimitive.Content, { ref: ref, className: clsx("openui-foldable-section-content", className), style: style, ...props, children: children })));
+ FoldableSectionContent.displayName = "FoldableSectionContent";
+diff --git a/node_modules/@openuidev/react-ui/dist/components/SectionBlock/index.cjs b/node_modules/@openuidev/react-ui/dist/components/SectionBlock/index.cjs
+index 7e5478e..3bb3a9d 100644
+--- a/node_modules/@openuidev/react-ui/dist/components/SectionBlock/index.cjs
++++ b/node_modules/@openuidev/react-ui/dist/components/SectionBlock/index.cjs
+@@ -37,11 +37,10 @@ const FoldableSectionTrigger = (0, react.forwardRef)(({ className, style, text,
+ 			className: "openui-foldable-section-trigger-content-wrapper",
+ 			children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(require_components_Separator_index.Separator, { className: "openui-foldable-section-trigger-content-separator" }), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+ 				className: "openui-foldable-section-trigger-content-icon-button-wrapper",
+-				children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(require_components_IconButton_index.IconButton, {
+-					icon: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(lucide_react.ChevronRight, { className: "openui-foldable-section-trigger-content-icon-button-icon" }),
+-					size: "3-extra-small",
+-					variant: "secondary",
+-					className: "openui-foldable-section-trigger-content-icon-button"
++				children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
++					className: "openui-icon-button openui-icon-button-secondary openui-icon-button-3-extra-small openui-icon-button-square openui-foldable-section-trigger-content-icon-button",
++					"aria-hidden": true,
++					children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { className: "openui-icon-button-icon", children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(lucide_react.ChevronRight, { className: "openui-foldable-section-trigger-content-icon-button-icon" }) })
+ 				}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+ 					className: "openui-foldable-section-trigger-content-text",
+ 					children: text
+diff --git a/node_modules/@openuidev/react-ui/dist/index.cjs b/node_modules/@openuidev/react-ui/dist/index.cjs
+index 369fb4d..8d760e4 100644
+--- a/node_modules/@openuidev/react-ui/dist/index.cjs
++++ b/node_modules/@openuidev/react-ui/dist/index.cjs
+@@ -12558,11 +12558,10 @@ const FoldableSectionTrigger = (0, react.forwardRef)(({ className, style, text,
+ 			className: "openui-foldable-section-trigger-content-wrapper",
+ 			children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(Separator, { className: "openui-foldable-section-trigger-content-separator" }), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+ 				className: "openui-foldable-section-trigger-content-icon-button-wrapper",
+-				children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(IconButton, {
+-					icon: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(lucide_react.ChevronRight, { className: "openui-foldable-section-trigger-content-icon-button-icon" }),
+-					size: "3-extra-small",
+-					variant: "secondary",
+-					className: "openui-foldable-section-trigger-content-icon-button"
++				children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
++					className: "openui-icon-button openui-icon-button-secondary openui-icon-button-3-extra-small openui-icon-button-square openui-foldable-section-trigger-content-icon-button",
++					"aria-hidden": true,
++					children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { className: "openui-icon-button-icon", children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(lucide_react.ChevronRight, { className: "openui-foldable-section-trigger-content-icon-button-icon" }) })
+ 				}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+ 					className: "openui-foldable-section-trigger-content-text",
+ 					children: text

@@ -1,0 +1,59 @@
+/* Recall0 overrides for @openuidev/react-ui FullScreen shell */
+
+.research-panel-shell {
+  height: 100%;
+  width: 100%;
+  min-height: 0;
+}
+
+.research-panel-shell .openui-shell-container {
+  /* Embedded in dashboard — must not use viewport units or it overflows/clips the header */
+  height: 100% !important;
+  width: 100% !important;
+  max-height: 100%;
+}
+
+@media (min-width: 768px) {
+  /*
+   * Claude-style push layout: sidebar stays in flow and the main pane
+   * resizes in sync via grid + matched transition durations.
+   */
+  .research-panel-shell .openui-shell-container {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .research-panel-shell .openui-shell-sidebar-container {
+    position: relative;
+    flex-shrink: 0;
+    transition:
+      width 280ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .research-panel-shell .openui-shell-thread-container {
+    flex: none;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  /* Keep sidebar chrome visible while width animates (less jarring than fade-out) */
+  .research-panel-shell
+    .openui-shell-sidebar-container[data-sidebar-visual-state="collapsing"]
+    .openui-shell-sidebar-content,
+  .research-panel-shell
+    .openui-shell-sidebar-container[data-sidebar-visual-state="expanding"]
+    .openui-shell-sidebar-content,
+  .research-panel-shell
+    .openui-shell-sidebar-container[data-sidebar-visual-state="collapsing"]
+    .openui-shell-sidebar-header
+    > :not(.openui-shell-sidebar-header__top-row),
+  .research-panel-shell
+    .openui-shell-sidebar-container[data-sidebar-visual-state="expanding"]
+    .openui-shell-sidebar-header
+    > :not(.openui-shell-sidebar-header__top-row) {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
